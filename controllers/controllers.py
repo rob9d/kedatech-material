@@ -106,9 +106,9 @@ class MaterialApp(http.Controller):
     @http.route('/api/material/delete', auth='public', type='json')
     def delete_material(self, **rec):
         if request.jsonrequest:
-            if (rec['code'] and rec['name'] and rec['type'] and rec['price'] and rec['supplier']):
+            if (rec['id']):
                 old_material = request.env['master.material'].sudo().search([('id', '=', rec['id'])]).unlink()
-                args = {'sucess': True, 'message': 'Success', 'id': old_material.id}
+                args = {'sucess': True, 'message': 'Success'}
             else:
                 args = {'sucess': False, 'message': 'Failed'}
         return args
