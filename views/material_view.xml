@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- model.name action window -->
+        <record id="master_material_action" model="ir.actions.act_window">
+            <!-- <field name="name">Master</field> -->
+            <field name="name">master.material.action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">master.material</field>
+            <field name="view_mode">tree,form</field>
+
+            <!-- <field name="price" on_change="onchange_my_field(price)"/> -->
+            <!-- <input type="number" name="price" min="100"> -->
+            
+            <!-- <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="target">{current}</field> -->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="master_material_menu_act" name="Master" parent="material_master_menu_categ" action="master_material_action" sequence="10"/>
+    </data>
+</odoo>
